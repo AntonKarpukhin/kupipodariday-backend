@@ -6,10 +6,6 @@ export class CreateWishlistDto {
   name: string;
 
   @IsString()
-  @Length(0, 1500)
-  description: string;
-
-  @IsString()
   @IsUrl()
   image: string;
 

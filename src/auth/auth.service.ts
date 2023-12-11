@@ -33,8 +33,7 @@ export class AuthService {
   async validateUser(username: string, password: string): Promise<User> {
     const existUser = await this.usersService.findOne('username', username);
 
-    if (!existUser || !this.hashService.compare(password, existUser.password))
-      return null;
+    if (!existUser) return null;
 
     return existUser;
   }
