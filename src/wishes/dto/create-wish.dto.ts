@@ -1,6 +1,7 @@
 import {
   IsNotEmpty,
   IsNumber,
+  IsOptional,
   IsString,
   IsUrl,
   MaxLength,
@@ -39,9 +40,10 @@ export class CreateWishDto {
   @IsNotEmpty()
   description: string;
 
-  @IsNumber()
+  @IsOptional()
+  @Min(1)
   raised: number;
 
-  @IsNumber()
+  @IsOptional()
   copied: number;
 }

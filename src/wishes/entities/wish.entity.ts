@@ -46,7 +46,11 @@ export class Wish extends BaseEntity {
   @Min(1)
   price: number;
 
-  @Column({ type: 'decimal', precision: 10, scale: 2, default: 0 })
+  @Column({
+    default: 0,
+    type: 'decimal',
+    scale: 2,
+  })
   @IsNumber()
   raised: number;
 
@@ -61,7 +65,12 @@ export class Wish extends BaseEntity {
   @IsNotEmpty()
   description: string;
 
-  @Column({ default: 0 })
+  @Column({
+    type: 'numeric',
+    precision: 10,
+    scale: 2,
+    default: 0,
+  })
   @IsNumber()
   copied: number;
 
